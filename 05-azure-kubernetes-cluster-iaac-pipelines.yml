@@ -7,6 +7,13 @@ pool:
 steps:
 - script: echo K8S Terraform Azure!
   displayName: 'Run a one-line script'
+- bash: ls -R $(System.DefaultWorkingDirectory)
+  displayName: 'List all files for debugging'
+
+#- task: TerraformInstaller@1
+#  displayName: 'Install Terraform'
+#  inputs:
+#    terraformVersion: 'latest'
 - task: DownloadSecureFile@1
   name: publishkey
   inputs:
@@ -24,5 +31,5 @@ steps:
     backendAzureRmStorageAccountName: 'storageacctsureshxyz'
     backendAzureRmContainerName: 'storageacctsureshcontainer'
     backendAzureRmKey: 'kubernetes-dev.tfstate'
-    allowTelemetryCollection: false
+    allowTelemetryCollection: true
 
