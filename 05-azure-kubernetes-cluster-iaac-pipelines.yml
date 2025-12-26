@@ -10,7 +10,10 @@ steps:
 - bash: ls -R $(System.DefaultWorkingDirectory)
 - bash: ls -R $(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes
   displayName: 'List all files for debugging'
-
+- task: TerraformCLI@1
+  displayName: 'check terraform version'
+  inputs:
+    command: version
 # - task: TerraformInstaller@1
 #   displayName: 'Install Terraform'
 #   inputs:
