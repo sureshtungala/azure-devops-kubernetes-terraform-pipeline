@@ -11,10 +11,10 @@ steps:
 - bash: ls -R $(System.DefaultWorkingDirectory)/configuration/iaac/azure/kubernetes
   displayName: 'List all files for debugging'
 
-- task: TerraformInstaller@1
-  displayName: 'Install Terraform'
-  inputs:
-     terraformVersion: 'latest'
+# - task: TerraformInstaller@1
+#   displayName: 'Install Terraform'
+#   inputs:
+#      terraformVersion: 'latest'
 - task: DownloadSecureFile@1
   name: publishkey
   inputs:
